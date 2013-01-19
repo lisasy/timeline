@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wesleyan Activism</title>
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+
+  <script src="js/jquery.js"></script>
+
+  <script type="text/javascript">
+  	$(document).ready(function(){
+  		// $('#eventBody li:nth-child(odd)').addClass('');
+	});	
+  </script>
+</head>
+<body class="container" ng-controller="HistoryTimeline">
+
+<div class="row">
+	<h1><span class="span12">History of Activism at Wesleyan University</span></h1>
+</div>
+
+<div class="body-content row">
+
+	<div id="search-field" class="span12">
+		Search: <input ng-model="query">
+	</div>
+
+	<ul id="eventBody" class="row">
+
+			<li class="" ng-repeat="event in events | filter:query | orderBy:orderProp:true">
+				<span ng-class="$index%2==0&&'span6 odd left'||'right span6 even'">
+				<p>{{event.initialDate|date:'fullDate'}}</p>
+				<p>{{event.label}}</p>
+     			</span>
+			</li>
+
+
+	</ul>
+</div>
+</body>
+</html>

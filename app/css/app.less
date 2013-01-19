@@ -1,0 +1,149 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+#body-background {
+  background: url('../img/wesleyanbg.png') no-repeat center bottom fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#timeline-header {
+  text-align: center;
+}
+#search-field {
+  margin: 20px 0;
+  z-index: 9999;
+}
+/*
+STICKY NAVIGATION
+*/
+#nav-container {
+  max-width: 100%;
+}
+#sticky-navigation {
+  z-index: 9999;
+}
+#sticky-navigation ul {
+  max-width: 100%;
+  margin-left: 16px;
+}
+#sticky-navigation ul li {
+  background: #444444;
+  float: left;
+  text-align: center;
+  display: inline-block;
+  list-style: none;
+  border-left:1px solid #777;
+  border-right: 1px solid #222;
+  width: 145px;
+}
+#sticky-navigation ul li:nth-of-type(last){
+	border-right:none;
+}
+#sticky-navigation ul li:first-child{
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+#sticky-navigation ul li:last-child{
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+#sticky-navigation ul li a {
+  color: #ffffff;
+  padding: 10px 0;
+  width: 100%;
+  display: block;
+}
+#sticky-navigation ul li:hover {
+  background: #555555;
+}
+#sticky-navigation ul li.active {
+  background: #222222;
+}
+.stuck {
+  top: 0;
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+}
+/*
+DECADES
+*/
+section[id*="decade"] {
+  padding-top: 80px;
+}
+/*
+TIMELINE BODY
+*/
+#timeline {
+  list-style: none;
+  margin: 20px auto;
+  background:url('../img/timelinebg.png') repeat-y top center;
+}
+#timeline li {
+	padding: 16px;
+}
+.box {
+  border: 1px solid #dddddd;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.odd, .even{
+	.dateTimeline:after{
+		color: #ffffff;
+ 	 	content: "";
+  		position: absolute;
+  		border-top: 10px solid transparent;
+  		border-bottom: 10px solid transparent;
+	}
+}
+.odd .dateTimeline:after {
+  right: 6px; 
+  border-left: 10px solid #ddd;
+}
+.even .dateTimeline:after {
+  left: 6px;
+  border-right: 10px solid #ddd;
+}
+
+.even {
+}
+
+
+/**************
+MEDIA QUERIES
+**************/
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	#timeline {
+	  background:none;
+	}
+
+	.odd, .even{
+		.dateTimeline:after{
+			display: none;
+		}
+	}
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+}
+

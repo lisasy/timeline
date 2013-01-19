@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>Wesleyan Activism</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/foundation.min.css">
+  <link rel="stylesheet/less" type="text/css" href="css/app.less" />
+</head>
+<body ng-controller="HistoryTimeline">
+<div id="body-background">
+
+<div class="row">
+	<div id="timeline-header" class="ten columns centered">
+    <h2>History of Activism at Wesleyan University</h2>
+    <p>A historical archival project created in collaboration with Wesward, the Hermes, the University Organizing Center (UOC), Wesleying, and many more.</p>
+  </div>
+
+    <div class="twelve columns">
+        <div class="eight columns">
+            <p>
+            This project seeks to document Wesleyan University's activism history from 1968 to 2008. Information for this project is gathered from the Hermes's Wesleyan activism poster.
+            </p>
+        </div>
+        <aside class="four columns">
+            <div id="search-field">
+                Search: <input ng-model="query">
+            </div>
+            <p>Interested in contributing to the activism timeline? Click <a href="#">here</a>.</p>
+        </aside>
+    </div>
+  </div>
+
+<div class="row">
+    <div id="nav-container" class="twelve columns centered">
+      <nav id="sticky-navigation">
+          <ul>
+              <li><a href="#decade-1960s">1960</a></li>
+              <li><a href="#decade-1970s">1970</a></li>
+              <li><a href="#decade-1980s">1980</a></li>
+              <li><a href="#decade-1990s">1990</a></li>
+              <li><a href="#decade-2000s">2000</a></li>
+              <li class="active"><a href="#decade-2010s">2010-Now</a></li>
+          </ul>
+      </nav>
+    </div>
+</div>
+
+<div class="timeline-content row">
+	<ul id="eventBody">
+		<div id="timeline" class="twelve columns">
+
+      <!-- Sort each event -->
+			<li ng-class="$index%2==0&&'six columns end odd'||'six columns offset-by-six even'" ng-repeat="event in events | filter:query | orderBy:orderProp:true">
+          <div class="box" ng-class:"'decade-{{event.decade}}s'">
+
+            <span class="dateTimeline">
+  				    <h5>{{event.theDate | date: 'MMMM d, yyyy'}}</h5>
+            </span>
+  				  <p>{{event.label}}</p>
+
+          </div>
+			</li>
+
+		</div>
+	</ul>
+</div>
+</div>
+
+	<script src="js/less.js" type="text/javascript"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/services.js"></script>
+	<script src="lib/angular/angular-resource.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/waypoints-sticky.min.js"></script>
+  <script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+  <script src="js/nav.js"></script>
+
+
+</body>
+</html>
