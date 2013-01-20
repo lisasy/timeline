@@ -7,13 +7,18 @@ function HistoryTimeline($scope, $http){
 
     	var decadeArray = new Array();
 
-    	var a = $scope.events;
+    	var events = $scope.events;
 
-    	for(var event in events){
-    		event.theDate;
+    	function getFullYear(year){
+
+    	};
+
+    	function getDecade(){}
+
+    	for(var i = 0; i<events.length; i++){
+    		var date = events[i].theDate;
+    		console.log(date);
     	}
-
-    	console.log(event);
 
 
 
